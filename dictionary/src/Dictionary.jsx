@@ -13,12 +13,12 @@ const data = [
 
 
 const Dictionary = () => {
-    const [result, setResult] = useState(false);
+    const [result, setResult] = useState(true);
 
     const handleSearch = () => {
         const input = document.querySelector('input').value;
         const res = data.find(entry => entry.word.toLowerCase() === input.toLowerCase());
-        setResult(res ? res.meaning : "Word not found in dictionary.");
+        setResult(res);
     };
   return (
     <div>
@@ -29,7 +29,7 @@ const Dictionary = () => {
       </div>
       <div>
         <h4>Definition:</h4>
-        <p>{result && result}</p>
+        <p>{result ? result.meaning : "Word not found in dictionary."}</p>
       </div>
     </div>
   );
