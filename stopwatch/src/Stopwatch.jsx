@@ -16,12 +16,11 @@ function Stopwatch() {
         return () => clearInterval(interval);
     }, [isRunning, elapsedTime]);
     
-    const formatTime = (time) => {
-        const getSeconds = `0${time % 60}`.slice(-2);
-        const minutes = Math.floor(time / 60);
-        const getMinutes = `0${minutes % 60}`.slice(-2);
-        return `${getMinutes} : ${getSeconds}`;
-    }
+    const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+    };
     const startStopHandler = () => {
         setIsRunning(prevRunning => !prevRunning);
     }
