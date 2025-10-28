@@ -37,7 +37,7 @@ function Stopwatch() {
                 <button onClick={startStopHandler}>
                     {isRunning ? 'Stop' : 'Start'}
                 </button>
-                <button onClick={resetHandler} disabled={elapsedTime === 0 && !isRunning}>
+                <button onClick={resetHandler}>
                     Reset
                 </button>
             </div>
