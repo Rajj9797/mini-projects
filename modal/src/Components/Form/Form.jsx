@@ -57,7 +57,7 @@ export default function Form() {
   return (
     <div
       ref={overlayRef}
-      className={styles.overlay}
+      className={styles.modal}
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
